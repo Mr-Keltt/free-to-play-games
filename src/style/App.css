@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #343434;
+}
+
+#root {
+    width: 100%;
+}
+
+.gameList {
+    padding-top: 10px;
+}
