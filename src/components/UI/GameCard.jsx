@@ -4,7 +4,7 @@ import {Col, Row} from "antd";
 import { Typography } from 'antd';
 const { Text } = Typography;
 
-const GameCard = ({imgSrc, name, date, publisher, genres}) => {
+const GameCard = (props) => {
     return (
         <Col className={classes.gameCard}
             xs={{span: 22, offset: 1}}
@@ -13,22 +13,22 @@ const GameCard = ({imgSrc, name, date, publisher, genres}) => {
         >
             <Row gutter={16}>
                 <Col md={{span: 4}}>
-                    <img src={imgSrc} alt={"img"}></img>
+                    <img src={props.game.imgSrc} alt={"img"}></img>
                 </Col>
 
                 <Col md={{span: 6}}>
                     <Row justify={"space-between"}>
                         <Col>
-                            <h3>{name}</h3>
+                            <h3>{props.game.name}</h3>
                         </Col>
                     </Row>
 
                     <Row justify={"space-between"} className={classes.secondary}>
                         <Col>
-                            <text>{publisher}</text>
+                            <text>{props.game.publisher}</text>
                         </Col>
                         <Col>
-                            <text>{date}</text>
+                            <text>{props.game.date}</text>
                         </Col>
                     </Row>
                 </Col>
@@ -37,7 +37,7 @@ const GameCard = ({imgSrc, name, date, publisher, genres}) => {
                     md={{span: 14}}
                     className={classes.genreContainer}
                 >
-                    {genres.map((genre) =>
+                    {props.game.genres.map((genre) =>
                         <Text code>{genre}</Text>
                     )}
                 </Col>
