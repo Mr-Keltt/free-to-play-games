@@ -6,7 +6,7 @@
 /dist
 
 # IDE files
-.idea
+/.idea
 *.iml
 
 # cache
