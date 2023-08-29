@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Row, Col} from "antd";
 import "../style/App.css"
-import GameCard from "./UI/GameCard";
+import GameCard from "./UI/GameCard/GameCard";
 
 const GameList = ({games}) => {
     return (
