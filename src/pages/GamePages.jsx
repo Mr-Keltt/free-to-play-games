@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GamePages(props) {
+const GamePages = () => {
     return (
         <h1>Привет</h1>
     );

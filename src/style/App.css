@@ -4,12 +4,21 @@
 }
 
 body {
+    display: flex;
+    height: 100%;
     background: #343434;
+    flex-direction: column;
+    min-height: 100vh;
+    flex-shrink: 0;
 }
+
+
 
 #root {
     width: 100%;
 }
+
+
 
 .gameList {
     padding-top: 10px;

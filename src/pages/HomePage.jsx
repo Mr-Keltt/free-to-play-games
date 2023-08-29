@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import GameList from "../components/GameList";
 
-function HomePage(props) {
+const HomePage = (props) => {
     const [games, setGames] = useState([
         {
             id: 1,
