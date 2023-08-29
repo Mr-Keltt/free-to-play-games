@@ -1,33 +1,10 @@
-import React, {useState} from 'react';
+import React, {} from 'react';
 import GameList from "../components/GameList";
+import {useLoaderData} from "react-router";
 
-const HomePage = (props) => {
-    const [games, setGames] = useState([
-        {
-            id: 1,
-            name: 'Name',
-            imgSrc: '',
-            publisher: 'publisher',
-            genres: ['g1', 'g2'],
-            date: '11.11.1111',
-        },
-        {
-            id: 2,
-            name: 'Name',
-            imgSrc: '',
-            publisher: 'publisher',
-            genres: ['g1', 'g2'],
-            date: '11.11.1111',
-        },
-        {
-            id: 3,
-            name: 'Name',
-            imgSrc: '',
-            publisher: 'publisher',
-            genres: ['g1', 'g2'],
-            date: '11.11.1111',
-        },
-    ])
+
+const HomePage = () => {
+    const games = useLoaderData();
 
     return (
         <>
@@ -36,4 +13,22 @@ const HomePage = (props) => {
     );
 }
 
-export default HomePage;
+const gameLoader = async () => {
+    const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '906bbbe9d9msh5d6266dfc08d989p1f9678jsn2f4f721153fd',
+            'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+        }
+    };
+
+    try {
+        const response = await fetch(url, options);
+        return await response.json()
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export {HomePage, gameLoader};

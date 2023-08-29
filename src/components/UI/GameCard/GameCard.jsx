@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {} from 'react';
 import classes from './GameCard.module.css';
 import {Col, Row} from "antd";
 import { Typography } from 'antd';
@@ -15,22 +15,22 @@ const GameCard = (props) => {
             <Link to={`/game/${props.game.id}`} className={classes.toGame}>
                 <Row gutter={16} className={classes.content}>
                     <Col md={{span: 4}}>
-                        <img src={props.game.imgSrc} alt={"img"}></img>
+                        <img src={props.game.thumbnail} alt={"img"}></img>
                     </Col>
 
                     <Col md={{span: 6}}>
                         <Row justify={"space-between"}>
                             <Col>
-                                <h3>{props.game.name}</h3>
+                                <h3>{props.game.title}</h3>
                             </Col>
                         </Row>
 
                         <Row justify={"space-between"} className={classes.secondary}>
                             <Col>
-                                <text>{props.game.publisher}</text>
+                                <Text>{props.game.publisher}</Text>
                             </Col>
                             <Col>
-                                <text>{props.game.date}</text>
+                                <Text>{props.game.release_date}</Text>
                             </Col>
                         </Row>
                     </Col>
@@ -39,9 +39,7 @@ const GameCard = (props) => {
                         md={{span: 14}}
                         className={classes.genreContainer}
                     >
-                        {props.game.genres.map((genre) =>
-                            <Text code>{genre}</Text>
-                        )}
+                            <Text code>{props.game.genre}</Text>
                     </Col>
                 </Row>
             </Link>
