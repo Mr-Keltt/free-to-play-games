@@ -1,19 +1,22 @@
-import React from 'react';
-import {useLoaderData} from "react-router";
+import React, {Suspense} from 'react';
+import {Await, defer, useLoaderData} from "react-router";
+import Game from "../components/Game";
 
 function GamePages() {
-    const {game, id} = useLoaderData()
+    const {game} = useLoaderData();
 
     return (
         <>
-            <h1>{game.title}</h1>
-            <img src={game.thumbnail} alt={"thumbnail"}></img>
+            <Suspense fallback={<h1>Загрузка...</h1>}>
+                <Await resolve={game}>
+                    <Game></Game>
+                </Await>
+            </Suspense>
         </>
     );
 }
 
-const gameLoader = async ({params}) => {
-    const id = params.id;
+const getGame = async (id) => {
     const url = `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`;
     const options = {
         method: 'GET',
@@ -25,12 +28,18 @@ const gameLoader = async ({params}) => {
 
     try {
         const response = await fetch(url, options);
-        const game = await response.json();
-
-        return {game, id}
+        return await response.json();
     } catch (error) {
         console.error(error);
     }
+}
+
+const gameLoader = async ({params}) => {
+    const id = params.id;
+
+    return defer({
+        game: getGame(id)
+    })
 }
 
 export {GamePages, gameLoader};
