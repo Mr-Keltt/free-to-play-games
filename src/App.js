@@ -5,6 +5,7 @@ import {NotFoundPage} from "./pages/NotFoundPage";
 import {gameLoader, GamePages} from "./pages/GamePages";
 import {Layout} from "./components/Layout/Layout";
 import {ErrorPage} from "./pages/ErrorPage";
+import {cleadGamesCash} from "./helper"
 
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Layout /> } >
@@ -15,6 +16,8 @@ const router = createBrowserRouter(createRoutesFromElements(
 ))
 
 function App() {
+    setInterval(cleadGamesCash, 60000);
+
     return (
         <RouterProvider router={router} />
     );
