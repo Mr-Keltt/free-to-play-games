@@ -1,19 +1,20 @@
 import React, {Suspense} from 'react';
 import {Await, defer, useLoaderData} from "react-router";
-import Game from "../components/Game";
-import {checkFetch} from "../helper";
+import Game from "../../components/Game";
+import {checkFetch} from "../../helper";
+import classes from "./GamePage.module.css";
 
-function GamePages() {
+function GamePage() {
     const {game} = useLoaderData();
 
     return (
-        <>
+        <div className={classes.gamePages}>
             <Suspense fallback={<h1>Загрузка...</h1>}>
                 <Await resolve={game}>
                     <Game></Game>
                 </Await>
             </Suspense>
-        </>
+        </div>
     );
 }
 
@@ -51,4 +52,4 @@ const gameLoader = async ({params}) => {
     })
 }
 
-export {GamePages, gameLoader};
+export {GamePage, gameLoader};
