@@ -18,6 +18,12 @@ function GamePages() {
 }
 
 const getGame = async (id) => {
+    if (localStorage.getItem(`${id}`) !== null) {
+        const gameCash = JSON.parse(localStorage.getItem(`${id}`))
+
+        return gameCash.game
+    }
+
     const url = `https://free-to-play-games-database.p.rapidapi.com/api/game?id=${id}`;
     const options = {
         method: 'GET',
@@ -30,7 +36,11 @@ const getGame = async (id) => {
     const response = await fetch(url, options);
     checkFetch(response);
 
-    return await response.json();
+    const game = await response.json()
+
+    localStorage.setItem(`${id}`, JSON.stringify({game, dateCash: Date.now()}))
+
+    return game;
 }
 
 const gameLoader = async ({params}) => {
