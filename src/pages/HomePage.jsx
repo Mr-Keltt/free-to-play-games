@@ -1,6 +1,7 @@
 import React, {Suspense} from 'react';
 import GameList from "../components/GameList";
 import {Await, defer, useLoaderData} from "react-router";
+import {checkFetch} from "../helper";
 
 
 const HomePage = () => {
@@ -27,12 +28,10 @@ const getGames = async () => {
         }
     };
 
-    try {
-        const response = await fetch(url, options);
-        return await response.json()
-    } catch (error) {
-        console.error(error);
-    }
+    const response = await fetch(url, options);
+    checkFetch(response);
+
+    return await response.json()
 }
 
 const gamesLoader = async () => {
