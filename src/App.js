@@ -3,8 +3,6 @@ import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} fr
 import {HomePage, gamesLoader} from "./pages/HomePage";
 import {NotFoundPage} from "./pages/NotFoundPage/NotFoundPage";
 import {gameLoader, GamePage} from "./pages/GamePage/GamePage";
-import {NotFoundPage} from "./pages/NotFoundPage/NotFoundPage";
-import {gameLoader, GamePage} from "./pages/GamePage/GamePage";
 import {Layout} from "./components/Layout/Layout";
 import {ErrorPage} from "./pages/ErrorPage/ErrorPage";
 import {cleadGamesCash} from "./helper"

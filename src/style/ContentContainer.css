@@ -1,0 +1,9 @@
+.contentContainer {
+    display: block;
+    background: #4c4d52;
+    margin: 10px;
+    border-radius: 20px;
+    border: solid 2px #000;
+    color: white;
+    padding: 20px;
+}

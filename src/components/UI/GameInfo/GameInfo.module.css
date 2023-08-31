@@ -1,0 +1,32 @@
+.baseGameInfo {
+
+}
+
+.baseGameInfoImg {
+
+}
+
+.baseGameInfoText {
+    flex-direction:row-reverse;
+}
+
+.gameTitle, .systemRequirementsTitle {
+    margin-bottom: 15px;
+}
+
+.informationRow {
+    border-bottom: 2px #5e6065 solid;
+    padding: 5px 0 5px 0;
+}
+
+.systemRequirements {
+
+}
+
+.systemRequirementsTitle {
+
+}
+
+.screenshotsGame {
+
+}

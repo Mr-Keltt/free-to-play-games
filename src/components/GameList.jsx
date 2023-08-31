@@ -8,7 +8,10 @@ const GameList = () => {
     const games = useAsyncValue();
 
     return (
-        <Row className={"gameList"}>
+        <Row
+            className={"gameList"}
+            justify={"center"}
+        >
             {games.map((game) =>
                 <GameCard game={game} key={game.id.toString()}/>
             )}

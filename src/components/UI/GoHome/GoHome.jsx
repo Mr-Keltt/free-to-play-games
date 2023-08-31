@@ -6,15 +6,15 @@ import {Col, Row} from "antd";
 
 const GoHome = (props) => {
 
-    const {arrowStyles, textStyles, arrowSize} = props;
+    const {arrowStyles, textStyles, arrowSize, goHomeStyles} = props;
 
     return (
         <Link
             to="/"
             className={classes.goHome}
         >
-            <Row>
-                <Col fontSize={arrowSize} style={arrowStyles}><ArrowLeftOutlined /></Col>
+            <Row style={goHomeStyles}>
+                <Col style={arrowStyles}><ArrowLeftOutlined /></Col>
                 <Col style={textStyles}>На главную</Col>
             </Row>
 

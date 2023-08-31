@@ -1,9 +1,9 @@
 header {
-    padding: 30px;
+    padding: 25px;
     background: #4c4d52;
     border-radius: 0 0 20px 20px;
     border: solid 2px #000;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
     color: white;
 }
@@ -13,7 +13,7 @@ header {
 }
 
 footer {
-    padding: 30px;
+    padding: 20px;
     background: #4c4d52;
     border-radius: 20px 20px 0 0;
     border: solid 2px #000;

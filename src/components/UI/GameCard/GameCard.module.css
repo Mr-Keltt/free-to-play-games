@@ -1,17 +1,9 @@
 .gameCard {
-    background: #4c4d52;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    border: solid 2px #000;
-    color: white;
+
 }
 
 .toGame {
     width: 100%;
-}
-
-.content {
-    padding: 20px;
 }
 
 .secondary {

@@ -1,23 +1,55 @@
 import React, {Suspense} from 'react';
 import {Await, defer, useLoaderData} from "react-router";
-import Game from "../components/Game";
-import {checkFetch} from "../helper";
-import Loader from "../components/UI/Loader/loader";
-import Game from "../../components/Game";
+import GameInfo from '../../components/UI/GameInfo/GameInfo'
+import Loader from "../../components/UI/Loader/loader";
 import {checkFetch} from "../../helper";
 import classes from "./GamePage.module.css";
+import GoHome from "../../components/UI/GoHome/GoHome";
+import {Col, Row} from "antd";
 
 function GamePage() {
     const {game} = useLoaderData();
 
+    const goHomeStyles = {
+        'margin-left': '10px',
+    }
+
+    const arrowStyles = {
+        'fontSize': '20px',
+    }
+
+    const textStyles = {
+        'font-size': '20px',
+        'padding-left': '10px',
+    }
+
     return (
-        <div className={classes.gamePages}>
-            <Suspense fallback={<Loader />}>
-                <Await resolve={game}>
-                    <Game></Game>
-                </Await>
-            </Suspense>
-        </div>
+        <Row
+            className={classes.gamePages}
+            justify={"center"}
+        >
+            <Col span={22}>
+                <Row>
+                    <Col span={24}>
+                        <GoHome
+                            goHomeStyles={goHomeStyles}
+                            arrowStyles={arrowStyles}
+                            textStyles={textStyles}
+                        />
+                    </Col>
+                </Row>
+
+                <Row>
+                    <Col span={24}>
+                        <Suspense fallback={<Loader />}>
+                            <Await resolve={game}>
+                                <GameInfo></GameInfo>
+                            </Await>
+                        </Suspense>
+                    </Col>
+                </Row>
+            </Col>
+        </Row>
     );
 }
 

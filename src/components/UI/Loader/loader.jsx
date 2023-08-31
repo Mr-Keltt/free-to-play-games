@@ -9,8 +9,11 @@ const Loader = () => {
             className={classes.loader}
             justify={"center"}
         >
-            <Col span={1}>
-                <LoadingOutlined />
+            <Col
+                span={24}
+                className={classes.col}
+            >
+                <LoadingOutlined/>
             </Col>
         </Row>
     );
