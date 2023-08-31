@@ -2,13 +2,14 @@ import React, {Suspense} from 'react';
 import {Await, defer, useLoaderData} from "react-router";
 import Game from "../components/Game";
 import {checkFetch} from "../helper";
+import Loader from "../components/UI/Loader/loader";
 
 function GamePages() {
     const {game} = useLoaderData();
 
     return (
         <>
-            <Suspense fallback={<h1>Загрузка...</h1>}>
+            <Suspense fallback={<Loader />}>
                 <Await resolve={game}>
                     <Game></Game>
                 </Await>
