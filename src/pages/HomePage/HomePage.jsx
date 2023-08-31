@@ -1,11 +1,11 @@
 import React, {Suspense} from 'react';
-import GameList from "../components/GameList";
-import Loader from "../components/UI/Loader/loader";
+import GameList from "../../components/UI/GameList/GameList";
+import Loader from "../../components/UI/Loader/loader";
 import {Await, defer, useLoaderData} from "react-router";
-import {checkFetch} from "../helper";
+import {checkFetch} from "../../helper";
 import {Col, Row} from "antd";
-import FilteringRow from "../components/UI/FilteringRow/FilteringRow";
-import {getFilterObject} from "../helper";
+import FilteringRow from "../../components/UI/FilteringRow/FilteringRow";
+import {getFilterObject} from "../../helper";
 import axios from 'axios';
 
 

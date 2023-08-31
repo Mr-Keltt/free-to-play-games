@@ -1,7 +1,7 @@
 import React, {} from 'react';
 import {Row} from "antd";
-import "../style/App.css"
-import GameCard from "./UI/GameCard/GameCard";
+import "../../../style/App.css"
+import GameCard from "../GameCard/GameCard";
 import {useAsyncValue} from "react-router";
 
 const GameList = () => {

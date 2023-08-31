@@ -12,7 +12,11 @@ const BaseGameInfo = (props) => {
             gutter={[40, 0]}
         >
             <Col>
-                <img src={game.thumbnail} alt={"thumbnail"}></img>
+                <img
+                    className={classes.baseGameInfoImg}
+                    src={game.thumbnail}
+                    alt={"thumbnail"}
+                ></img>
             </Col>
             <Col
                 className={classes.baseGameInfoText}

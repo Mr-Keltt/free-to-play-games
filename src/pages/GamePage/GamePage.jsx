@@ -11,16 +11,16 @@ function GamePage() {
     const {game} = useLoaderData();
 
     const goHomeStyles = {
-        'margin-left': '10px',
+        marginLeft: '10px',
     }
 
     const arrowStyles = {
-        'fontSize': '20px',
+        fontSize: '20px',
     }
 
     const textStyles = {
-        'font-size': '20px',
-        'padding-left': '10px',
+        fontSize: '20px',
+        paddingLeft: '10px',
     }
 
     return (

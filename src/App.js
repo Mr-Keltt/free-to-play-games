@@ -1,6 +1,6 @@
 import React, { } from 'react';
 import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from "react-router-dom"
-import {HomePage, gamesLoader} from "./pages/HomePage";
+import {HomePage, gamesLoader} from "./pages/HomePage/HomePage";
 import {NotFoundPage} from "./pages/NotFoundPage/NotFoundPage";
 import {gameLoader, GamePage} from "./pages/GamePage/GamePage";
 import {Layout} from "./components/Layout/Layout";

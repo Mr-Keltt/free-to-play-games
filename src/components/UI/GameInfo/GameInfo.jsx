@@ -24,11 +24,21 @@ const GameInfo = () => {
                     <Row>
                         <Col span={24}>
                             <div  className={"contentContainer"}>
-                                <Row>
-                                    <Col span={16}>
+                                <Row
+                                    gutter={[30,30]}
+                                >
+                                    <Col
+                                        md={{span: 16}}
+                                        sm={{span: 24}}
+                                        xs={{span: 24}}
+                                    >
                                         <SystemRequirements systemRequirements={game.minimum_system_requirements}/>
                                     </Col>
-                                    <Col span={8}>
+                                    <Col
+                                        md={{span: 8}}
+                                        sm={{span: 24}}
+                                        xs={{span: 24}}
+                                    >
                                         <ScreenshotsGame screenshots={game.screenshots} />
                                     </Col>
                                 </Row>

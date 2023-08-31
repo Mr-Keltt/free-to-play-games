@@ -10,22 +10,23 @@
     color: #cbcbcb;
 }
 
-.gameCard Row {
-    width: 100%;
+.gameCardImageContainer {
+    justify-content: center;
+    align-items: center;
 }
 
-.gameCard img {
+.gameCardImage {
     width: 100%;
+    border-radius: 5px;
+}
+
+.gameCardTextBlock {
     height: 100%;
-}
-
-.gameCard code {
-    color: white;
-    background: #3f3f44;
-}
-
-.genreContainer {
     display: flex;
-    align-items:center;
-    justify-content:flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.gameCardDescription {
+    padding: 10px;
 }

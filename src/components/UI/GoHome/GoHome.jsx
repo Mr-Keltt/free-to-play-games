@@ -6,7 +6,7 @@ import {Col, Row} from "antd";
 
 const GoHome = (props) => {
 
-    const {arrowStyles, textStyles, arrowSize, goHomeStyles} = props;
+    const {arrowStyles, textStyles, goHomeStyles} = props;
 
     return (
         <Link
