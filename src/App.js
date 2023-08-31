@@ -4,7 +4,7 @@ import {HomePage, gamesLoader} from "./pages/HomePage";
 import {NotFoundPage} from "./pages/NotFoundPage";
 import {gameLoader, GamePages} from "./pages/GamePages";
 import {Layout} from "./components/Layout/Layout";
-import {ErrorPage} from "./pages/ErrorPage";
+import {ErrorPage} from "./pages/ErrorPage/ErrorPage";
 import {cleadGamesCash} from "./helper"
 
 const router = createBrowserRouter(createRoutesFromElements(

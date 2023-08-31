@@ -1,0 +1,13 @@
+.errorPage {
+
+}
+
+.errStatus {
+    color: red;
+    font-size: 100px;
+}
+
+.errMessage {
+    color: red;
+    font-size: 40px;
+}
