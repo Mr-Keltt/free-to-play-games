@@ -1,5 +1,5 @@
 .contentContainer {
-    display: block;
+    display: flex;
     background: #4c4d52;
     margin: 10px;
     border-radius: 20px;
