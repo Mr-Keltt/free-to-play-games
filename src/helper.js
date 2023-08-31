@@ -18,4 +18,23 @@ const cleadGamesCash = () => {
     }
 }
 
-export {checkFetch, cleadGamesCash}
+const getFilterObject = (params) => {
+    const {platform, category, sortBy} = params;
+    const filterObject = {}
+
+    if (platform && platform !== 'all') {
+        filterObject['platform'] = platform
+    }
+
+    if (category && category !== 'all') {
+        filterObject['category'] = category
+    }
+
+    if (sortBy && sortBy !=="all") {
+        filterObject['\'sort-by\''] = sortBy
+    }
+
+    return filterObject;
+}
+
+export {checkFetch, cleadGamesCash, getFilterObject}

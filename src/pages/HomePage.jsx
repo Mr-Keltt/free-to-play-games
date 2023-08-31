@@ -3,6 +3,9 @@ import GameList from "../components/GameList";
 import Loader from "../components/UI/Loader/loader";
 import {Await, defer, useLoaderData} from "react-router";
 import {checkFetch} from "../helper";
+import {Col, Row} from "antd";
+import FilteringRow from "../components/UI/FilteringRow/FilteringRow";
+import {getFilterObject} from "../helper";
 
 
 const HomePage = () => {
@@ -10,16 +13,27 @@ const HomePage = () => {
 
     return (
         <>
-            <Suspense fallback={<Loader />}>
-                <Await resolve={games}>
-                    <GameList></GameList>
-                </Await>
-            </Suspense>
+            <Row>
+                <Col span={24}>
+                    <FilteringRow />
+                </Col>
+            </Row>
+            <Row>
+                <Col span={24}>
+                    <Suspense fallback={<Loader />}>
+                        <Await resolve={games}>
+                            <GameList />
+                        </Await>
+                    </Suspense>
+                </Col>
+            </Row>
         </>
     );
 }
 
-const getGames = async () => {
+const getGames = async (params) => {
+    const filterObject = getFilterObject(params)
+
     const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
     const options = {
         method: 'GET',
@@ -35,9 +49,9 @@ const getGames = async () => {
     return await response.json()
 }
 
-const gamesLoader = async () => {
+const gamesLoader = async ({params}) => {
     return defer({
-        games: getGames()
+        games: getGames(params)
     })
 }
 

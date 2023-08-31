@@ -10,6 +10,7 @@ import {cleadGamesCash} from "./helper"
 const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Layout /> } >
         <Route index element={<HomePage />} loader={gamesLoader} errorElement={<ErrorPage/>} />
+        <Route path="/:platform/:category/:sortBy" element={<HomePage />} loader={gamesLoader} errorElement={<ErrorPage/>} />
         <Route path="/game/:id" element={<GamePage />} loader={gameLoader} errorElement={<ErrorPage/>} />
         <Route path="*" element={<NotFoundPage />} />
     </Route>
