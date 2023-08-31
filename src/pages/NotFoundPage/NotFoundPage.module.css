@@ -1,0 +1,15 @@
+.notFoundPage {
+
+}
+
+.notFoundPageMessage {
+    color: red;
+    padding-bottom: 40px;
+    font-size: 50px;
+}
+
+.goHome {
+    color: red;
+    font-size: 30px;
+}
+

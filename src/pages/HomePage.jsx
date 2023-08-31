@@ -1,5 +1,6 @@
 import React, {Suspense} from 'react';
 import GameList from "../components/GameList";
+import Loader from "../components/UI/Loader/loader";
 import {Await, defer, useLoaderData} from "react-router";
 import {checkFetch} from "../helper";
 
@@ -9,7 +10,7 @@ const HomePage = () => {
 
     return (
         <>
-            <Suspense fallback={<h1>Загрузка...</h1>}>
+            <Suspense fallback={<Loader />}>
                 <Await resolve={games}>
                     <GameList></GameList>
                 </Await>

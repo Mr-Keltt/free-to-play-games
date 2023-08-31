@@ -1,10 +1,12 @@
 import React, { } from 'react';
 import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from "react-router-dom"
 import {HomePage, gamesLoader} from "./pages/HomePage";
-import {NotFoundPage} from "./pages/NotFoundPage";
+import {NotFoundPage} from "./pages/NotFoundPage/NotFoundPage";
+import {gameLoader, GamePage} from "./pages/GamePage/GamePage";
+import {NotFoundPage} from "./pages/NotFoundPage/NotFoundPage";
 import {gameLoader, GamePage} from "./pages/GamePage/GamePage";
 import {Layout} from "./components/Layout/Layout";
-import {ErrorPage} from "./pages/ErrorPage";
+import {ErrorPage} from "./pages/ErrorPage/ErrorPage";
 import {cleadGamesCash} from "./helper"
 
 const router = createBrowserRouter(createRoutesFromElements(
