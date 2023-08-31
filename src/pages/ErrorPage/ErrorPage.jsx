@@ -5,7 +5,7 @@ import {Col, Row} from "antd";
 
 const ErrorPage = () => {
     const error = useRouteError();
-    console.log(error)
+    // console.log(error)
     return (
         <Row
             className={classes.errorPage}

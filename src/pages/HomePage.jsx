@@ -6,6 +6,7 @@ import {checkFetch} from "../helper";
 import {Col, Row} from "antd";
 import FilteringRow from "../components/UI/FilteringRow/FilteringRow";
 import {getFilterObject} from "../helper";
+import axios from 'axios';
 
 
 const HomePage = () => {
@@ -32,21 +33,25 @@ const HomePage = () => {
 }
 
 const getGames = async (params) => {
-    const filterObject = getFilterObject(params)
-
-    const url = 'https://free-to-play-games-database.p.rapidapi.com/api/games';
     const options = {
         method: 'GET',
+        url: 'https://free-to-play-games-database.p.rapidapi.com/api/games',
         headers: {
             'X-RapidAPI-Key': '906bbbe9d9msh5d6266dfc08d989p1f9678jsn2f4f721153fd',
             'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
         }
     };
 
-    const response = await fetch(url, options);
+    const filterObject = getFilterObject(params)
+
+    if (Object.keys(filterObject).length > 0) {
+        options.params = filterObject
+    }
+
+    const response = await axios.request(options);
     checkFetch(response);
 
-    return await response.json()
+    return await response.data
 }
 
 const gamesLoader = async ({params}) => {

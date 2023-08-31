@@ -1,5 +1,5 @@
 const checkFetch = (response) => {
-    if (!response.ok) {
+    if (!response.status) {
         throw new Response('', {statusText: "Something went wrong!!!", status: response.status})
     }
 }
